@@ -82,7 +82,7 @@ npm start
 \`\`\`
 
 ## 📁 Project Structure
-
+\`\`\`bash
 admybrand-landing/
 ├── app/
 │   ├── layout.tsx               # Root layout and theming
@@ -102,6 +102,7 @@ admybrand-landing/
 ├── hooks/                       # Custom React hooks
 ├── lib/                         # Utility functions
 └── public/                      # Static assets
+\`\`\`
 
 ## 🎨 Design System
 
