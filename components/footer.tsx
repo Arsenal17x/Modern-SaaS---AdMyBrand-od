@@ -224,23 +224,23 @@ export function Footer() {
                 ))}
               </ul>
             </motion.div>
-            
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-start text-right"
-        >
-          <motion.a
-            href="#"
-            className="text-white hover:text-purple-400 transition-colors duration-200 flex items-center space-x-2 font-medium text-sm"
-            whileHover={{ x: 5 }}
-          >
-            <span>Explore more</span>
-            <ArrowRight className="w-4 h-4" />
-          </motion.a>
-        </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col md:flex-row justify-between items-start text-right"
+            >
+              <motion.a
+                href="#"
+                className="text-white hover:text-purple-400 transition-colors duration-200 flex items-center space-x-2 font-medium text-sm"
+                whileHover={{ x: 5 }}
+              >
+                <span>Explore more</span>
+                <ArrowRight className="w-4 h-4" />
+              </motion.a>
+            </motion.div>
           </div>
         </div>
 
@@ -252,7 +252,9 @@ export function Footer() {
           viewport={{ once: true }}
           className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-white/60 text-sm mb-4 md:mb-0">© 2024 ADmyBRAND AI Suite, Inc. All rights reserved.</p>
+          <p className="text-white/60 text-sm mb-4 md:mb-0 text-center w-full">
+            © 2024 ADmyBRAND AI Suite, Inc. All rights reserved.
+          </p>
         </motion.div>
       </div>
     </footer>

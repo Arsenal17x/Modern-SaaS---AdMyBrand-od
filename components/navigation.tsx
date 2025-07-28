@@ -65,26 +65,41 @@ export function Navigation() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative"
-                onHoverStart={() => setActiveItem(item.name)}
-                onHoverEnd={() => setActiveItem("")}
+                className="relative group"
               >
                 <a
                   href={item.href}
-                  className="text-white/80 hover:text-white transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/10 relative z-10"
+                  className="text-white/80 hover:text-white transition-all duration-300 py-2 px-3 rounded-lg relative z-10 block"
                 >
                   {item.name}
                 </a>
-                {activeItem === item.name && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg border border-white/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                )}
+                {/* Interactive glowing underline effect */}
+                <motion.div
+                  className="absolute bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 rounded-full"
+                  initial={{
+                    width: 0,
+                    x: "-50%",
+                    opacity: 0,
+                    boxShadow: "none",
+                  }}
+                  whileHover={{
+                    width: "80%",
+                    opacity: 1,
+                    boxShadow: [
+                      "0 0 10px rgba(168, 85, 247, 0.6)",
+                      "0 0 20px rgba(168, 85, 247, 0.8)",
+                      "0 0 30px rgba(236, 72, 153, 0.6)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    boxShadow: {
+                      duration: 0.6,
+                      ease: "easeInOut",
+                    },
+                  }}
+                />
               </motion.div>
             ))}
 
