@@ -6,68 +6,56 @@ A stunning, modern landing page for ADmyBRAND AI Suite - an AI-powered marketing
 ![Tailwind CSS](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## 🚀 Features
+## ✨ Features
 
-### Modern Design & UI
-- **Glassmorphism Effects**: Beautiful glass-like components with backdrop blur
-- **Gradient Backgrounds**: Purple-to-pink gradients throughout the design
-- **Responsive Design**: Mobile-first approach with seamless desktop experience
-- **Dark Theme**: Professional dark theme with accent colors
+### 🎨 Design & UI
+- Glassmorphism cards with backdrop blur
+- Gradient backgrounds (purple → pink)
+- Responsive and mobile-first layout
+- Dark theme with professional accents
 
-### Interactive Components
-- **Smooth Animations**: Framer Motion animations with scroll triggers
-- **Interactive Navigation**: Hover effects, active states, and mobile menu
-- **Dynamic Testimonials**: Two-row infinite carousel with opposite directions
-- **Collapsible FAQ**: Clean accordion with numbered items and arrow indicators
-- **Pricing Toggle**: Monthly/yearly billing switch with savings indicator
+### 💡 Interactivity
+- Framer Motion animations and scroll effects
+- Responsive navbar with mobile support
+- Infinite two-row testimonial carousel
+- Accordion-style FAQ section
+- Pricing toggle for monthly/yearly plans
 
-### Landing Page Sections
-1. **Hero Section**: Compelling headline, subtext, CTAs, and hero imagery
-2. **Features Section**: 8 AI-powered features with icons and descriptions
-3. **Pricing Section**: 3-tier pricing with trust indicators and company logos
-4. **Testimonials**: Customer reviews with photos and star ratings
-5. **FAQ Section**: 8 common questions with expandable answers
-6. **Footer**: Comprehensive links, social media, and newsletter signup
+### 📄 Page Sections
+1. **Hero** – Headline, subtext, CTA, and imagery  
+2. **Features** – 8 AI-driven features with icons  
+3. **Pricing** – 3-tier pricing cards and billing toggle  
+4. **Testimonials** – Client feedback with ratings  
+5. **FAQ** – Expandable questions  
+6. **Footer** – Links, socials, and newsletter
 
-### Technical Features
-- **Next.js 14**: App Router with server components
-- **TypeScript**: Full type safety throughout the application
-- **Tailwind CSS**: Utility-first CSS framework
-- **shadcn/ui**: High-quality, accessible UI components
-- **Framer Motion**: Smooth animations and transitions
-- **Responsive Images**: Optimized placeholder images with proper sizing
+### 🧪 Technical Stack
+- **Next.js 14** (App Router with server components)
+- **TypeScript** for type safety
+- **Tailwind CSS** utility framework
+- **shadcn/ui** for accessible components
+- **Framer Motion** for animations
+- **Optimized Images** with responsive sizing
 
-## 🛠️ Setup Instructions
+---
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-- Node.js 18.0 or later
-- npm, yarn, or pnpm package manager
+- **Node.js v18+**
+- npm, yarn, or pnpm
 
 ### Installation
 
-1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/your-username/admybrand-landing.git
-   cd admybrand-landing
-   \`\`\`
+```bash
+git clone https://github.com/your-username/admybrand-landing.git
+cd admybrand-landing
 
-2. **Install dependencies**
-   \`\`\`bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   \`\`\`
+# install dependencies
+npm install   # or yarn / pnpm install
 
-3. **Run the development server**
-   \`\`\`bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   \`\`\`
+# start development server
+npm run dev   # or yarn dev / pnpm dev
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000) to see the landing page.
@@ -81,27 +69,25 @@ npm start
 
 ## 📁 Project Structure
 
-\`\`\`
 admybrand-landing/
 ├── app/
-│   ├── globals.css          # Global styles and Tailwind imports
-│   ├── layout.tsx           # Root layout with theme provider
-│   └── page.tsx             # Main landing page
+│   ├── layout.tsx           # Root layout and theming
+│   ├── page.tsx             # Main landing page
+│   └── globals.css          # Global styles & Tailwind
 ├── components/
 │   ├── ui/                  # shadcn/ui components
-│   ├── faq-section.tsx      # FAQ accordion component
-│   ├── features-section.tsx # Features showcase
-│   ├── footer.tsx           # Footer with links and newsletter
-│   ├── glass-card.tsx       # Reusable glassmorphism card
-│   ├── hero-section.tsx     # Hero with CTA and imagery
-│   ├── navigation.tsx       # Header navigation with auth buttons
-│   ├── pricing-section.tsx  # Pricing tiers with toggle
-│   ├── section-container.tsx # Consistent section wrapper
-│   └── testimonials-section.tsx # Customer testimonials carousel
+│   ├── faq-section.tsx      # FAQ accordion
+│   ├── features-section.tsx # Feature blocks
+│   ├── footer.tsx           # Footer layout
+│   ├── glass-card.tsx       # Reusable glass UI card
+│   ├── hero-section.tsx     # Hero section
+│   ├── navigation.tsx       # Top nav with CTA
+│   ├── pricing-section.tsx  # Pricing cards & toggle
+│   ├── section-container.tsx# Wrapper for consistent padding
+│   └── testimonials-section.tsx # Review carousel
 ├── hooks/                   # Custom React hooks
-├── lib/                     # Utility functions
-└── public/                  # Static assets
-\`\`\`
+├── lib/                     # Utility helpers
+└── public/                  # Static assets (images, icons)
 
 ## 🎨 Design System
 
