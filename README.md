@@ -83,27 +83,25 @@ npm start
 
 ## 📁 Project Structure
 
-\`\`\`
 admybrand-landing/
 ├── app/
-│   ├── globals.css          # Global styles and Tailwind imports
-│   ├── layout.tsx           # Root layout with theme provider
-│   └── page.tsx             # Main landing page
+│   ├── layout.tsx               # Root layout and theming
+│   ├── page.tsx                 # Main landing page
+│   └── globals.css              # Tailwind base styles
 ├── components/
-│   ├── ui/                  # shadcn/ui components
-│   ├── faq-section.tsx      # FAQ accordion component
-│   ├── features-section.tsx # Features showcase
-│   ├── footer.tsx           # Footer with links and newsletter
-│   ├── glass-card.tsx       # Reusable glassmorphism card
-│   ├── hero-section.tsx     # Hero with CTA and imagery
-│   ├── navigation.tsx       # Header navigation with auth buttons
-│   ├── pricing-section.tsx  # Pricing tiers with toggle
-│   ├── section-container.tsx # Consistent section wrapper
-│   └── testimonials-section.tsx # Customer testimonials carousel
-├── hooks/                   # Custom React hooks
-├── lib/                     # Utility functions
-└── public/                  # Static assets
-\`\`\`
+│   ├── ui/                      # shadcn/ui components
+│   ├── hero-section.tsx         # Hero section
+│   ├── features-section.tsx     # Features grid
+│   ├── pricing-section.tsx      # Pricing cards + toggle
+│   ├── testimonials-section.tsx # Testimonials carousel
+│   ├── faq-section.tsx          # FAQ accordion
+│   ├── footer.tsx               # Footer
+│   ├── glass-card.tsx           # Glassmorphism cards
+│   ├── navigation.tsx           # Sticky navigation
+│   └── section-container.tsx    # Layout wrapper
+├── hooks/                       # Custom React hooks
+├── lib/                         # Utility functions
+└── public/                      # Static assets
 
 ## 🎨 Design System
 
