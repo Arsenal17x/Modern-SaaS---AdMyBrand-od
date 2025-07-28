@@ -67,39 +67,39 @@ export function Navigation() {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
+              <motion.div
+                    className="absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 shadow-lg shadow-purple-400/50"
+                    initial={{ width: 0, x: "-50%" }}
+                    animate={{ width: 0, x: "-50%" }}
+                    whileHover={{
+                      width: "100%",
+                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(236, 72, 153, 0.6)",
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    }}
+                  />
                 <a
                   href={item.href}
                   className="text-white/80 hover:text-white transition-all duration-300 py-2 px-3 rounded-lg relative z-10 block"
                 >
                   {item.name}
-                </a>
-                {/* Interactive glowing underline effect */}
-                <motion.div
-                  className="absolute bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 rounded-full"
-                  initial={{
-                    width: 0,
-                    x: "-50%",
-                    opacity: 0,
-                    boxShadow: "none",
-                  }}
-                  whileHover={{
-                    width: "80%",
-                    opacity: 1,
-                    boxShadow: [
-                      "0 0 10px rgba(168, 85, 247, 0.6)",
-                      "0 0 20px rgba(168, 85, 247, 0.8)",
-                      "0 0 30px rgba(236, 72, 153, 0.6)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                    boxShadow: {
-                      duration: 0.6,
+                  {/* Glowing underline effect */}
+                  <motion.div
+                    className="absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 shadow-lg shadow-purple-400/50"
+                    initial={{ width: 0, x: "-50%" }}
+                    animate={{ width: 0, x: "-50%" }}
+                    whileHover={{
+                      width: "100%",
+                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(236, 72, 153, 0.6)",
+                    }}
+                    transition={{
+                      duration: 0.3,
                       ease: "easeInOut",
-                    },
-                  }}
-                />
+                    }}
+                  />
+                </a>
               </motion.div>
             ))}
 

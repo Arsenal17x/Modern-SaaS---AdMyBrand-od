@@ -5,7 +5,6 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
-import { BackToTop } from "@/components/back-to-top"
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <TestimonialsSection />
       <FAQSection />
       <Footer />
-      <BackToTop />
     </main>
   )
 }
