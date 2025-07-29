@@ -171,7 +171,7 @@ export default function AboutSection() {
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover ring-2 ring-purple-400"
                   />
                   <h4 className="text-xl font-semibold text-white mb-1">{member.name}</h4>
                   <p className="text-purple-300 mb-3">{member.role}</p>

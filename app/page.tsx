@@ -28,6 +28,8 @@ export default function Home() {
         <AboutSection />
         <FeaturesSection />
         <PricingSection />
+        <TestimonialsSection/>
+        <FAQSection />
         <ContactSection />
       </main>
 
