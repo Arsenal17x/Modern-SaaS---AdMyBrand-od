@@ -46,42 +46,42 @@ A stunning, modern landing page for ADmyBRAND AI Suite - an AI-powered marketing
 ### Installation
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```
    git clone https://github.com/your-username/admybrand-landing.git
    cd admybrand-landing
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```
    npm install
    # or
    yarn install
    # or
    pnpm install
-   \`\`\`
+   ```
 
 3. **Run the development server**
-   \`\`\`bash
+   ```
    npm run dev
    # or
    yarn dev
    # or
    pnpm dev
-   \`\`\`
+   ```
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000) to see the landing page.
 
 ### Build for Production
 
-\`\`\`bash
+```
 npm run build
 npm start
-\`\`\`
+```
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 admybrand-landing/
 ├── app/
 │   ├── globals.css          # Global styles and Tailwind imports
@@ -101,7 +101,7 @@ admybrand-landing/
 ├── hooks/                   # Custom React hooks
 ├── lib/                     # Utility functions
 └── public/                  # Static assets
-\`\`\`
+```
 
 ## 🎨 Design System
 
