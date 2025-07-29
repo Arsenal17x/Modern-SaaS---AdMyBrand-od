@@ -87,6 +87,66 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6">Let's start a conversation</h3>
+              <p className="text-white/70 mb-8">
+                We're here to help you succeed. Whether you have questions about our platform, need technical support,
+                or want to discuss a custom solution, our team is ready to assist you.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={info.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <GlassCard className="p-6 hover:bg-white/10 transition-all duration-300">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <info.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-1">{info.title}</h4>
+                        <p className="text-purple-300 font-medium mb-1">{info.details}</p>
+                        <p className="text-white/60 text-sm">{info.description}</p>
+                      </div>
+                    </div>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard className="p-6 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
+                <h4 className="text-lg font-semibold text-white mb-2">Ready to get started?</h4>
+                <p className="text-white/70 mb-4">
+                  Book a demo and see how ADmyBRAND can transform your marketing strategy.
+                </p>
+                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0">
+                  Schedule a Demo
+                </Button>
+              </GlassCard>
+            </motion.div>
+          </motion.div>
+          
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -205,65 +265,7 @@ export default function ContactSection() {
             </GlassCard>
           </motion.div>
 
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's start a conversation</h3>
-              <p className="text-white/70 mb-8">
-                We're here to help you succeed. Whether you have questions about our platform, need technical support,
-                or want to discuss a custom solution, our team is ready to assist you.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <GlassCard className="p-6 hover:bg-white/10 transition-all duration-300">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-white mb-1">{info.title}</h4>
-                        <p className="text-purple-300 font-medium mb-1">{info.details}</p>
-                        <p className="text-white/60 text-sm">{info.description}</p>
-                      </div>
-                    </div>
-                  </GlassCard>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <GlassCard className="p-6 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
-                <h4 className="text-lg font-semibold text-white mb-2">Ready to get started?</h4>
-                <p className="text-white/70 mb-4">
-                  Book a demo and see how ADmyBRAND can transform your marketing strategy.
-                </p>
-                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0">
-                  Schedule a Demo
-                </Button>
-              </GlassCard>
-            </motion.div>
-          </motion.div>
+          
         </div>
       </div>
     </SectionContainer>
