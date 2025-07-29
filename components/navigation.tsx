@@ -29,36 +29,38 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-purple-500/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-2 cursor-pointer group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+        <div className="flex items-center justify-between py-4 relative">
+          <div className="flex-shrink-0">
+            {/* Logo */}
             <motion.div
-              className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/50 transition-all duration-300"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-2 cursor-pointer group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <span className="text-white font-bold text-sm">AI</span>
+              <motion.div
+                className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/50 transition-all duration-300"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="text-white font-bold text-sm">AI</span>
+              </motion.div>
+              <span className="text-white font-bold text-xl group-hover:text-purple-300 transition-colors duration-300">
+                ADmyBRAND
+              </span>
             </motion.div>
-            <span className="text-white font-bold text-xl group-hover:text-purple-300 transition-colors duration-300">
-              ADmyBRAND
-            </span>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -69,25 +71,31 @@ export default function Navigation() {
               >
                 <a
                   href={item.href}
-                  className="text-white text-lg font-medium no-underline relative block py-2 px-3 transition-colors duration-300 hover:text-white"
-                 onClick={(e) => {
-                   e.preventDefault()
-                   const target = document.querySelector(item.href)
-                   if (target) {
-                     target.scrollIntoView({
-                       behavior: 'smooth',
-                       block: 'start'
-                     })
-                   }
-                 }}
+                  className="text-white text-medium font-medium no-underline relative block py-2 px-3 transition-colors duration-300 hover:text-white"
+                  onClick={(e) => {
+                      e.preventDefault()
+                      const target = document.querySelector(item.href)
+                      if (target) {
+                        setTimeout(() => {
+                          target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                          })
+                        }, 300)
+                      }
+                    }}
                 >
                   {item.name}
                   {/* CSS-style underline effect using Tailwind */}
-                  <span className="absolute left-0 bottom-[-6px] h-[3px] w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-0.5 w-full scale-x-0 origin-left bg-cyan-400 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
                 </a>
               </motion.div>
             ))}
-
+          </div>
+          
+          
+          {/* Right: Optional future content e.g. Theme toggle, user icon */}
+          <div className="hidden md:flex items-center space-x-3">
             {/* Auth Buttons */}
             <div className="flex items-center space-x-3">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -169,20 +177,20 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="block py-3 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                   onClick={(e) => {
-                     e.preventDefault()
-                     setIsMobileMenuOpen(false)
-                     const target = document.querySelector(item.href)
-                     if (target) {
-                       setTimeout(() => {
-                         target.scrollIntoView({
-                           behavior: 'smooth',
-                           block: 'start'
-                         })
-                       }, 300)
-                     }
-                   }}
+                    onClick={(e) => {
+                    e.preventDefault()
+                    setIsMobileMenuOpen(false)
+                    const target = document.querySelector(item.href)
+                    if (target) {
+                      setTimeout(() => {
+                        target.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start'
+                        })
+                      }, 300)
+                    }
+                  }}
+
                     whileHover={{ x: 10 }}
                   >
                     {item.name}

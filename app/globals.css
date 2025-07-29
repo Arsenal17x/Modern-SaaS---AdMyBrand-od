@@ -86,6 +86,10 @@
   background: rgba(147, 51, 234, 0.7);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-black/20 backdrop-blur-sm border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <motion.div
@@ -79,27 +79,29 @@ export default function Footer() {
             </motion.div>
           </div>
 
-          {/* Links Sections */}
-          {Object.entries(footerLinks).map(([category, links], index) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-white font-semibold mb-4 capitalize">{category}</h3>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <a href={link.href} className="text-white/60 hover:text-white transition-colors duration-300">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {/* Wrapper for link sections */}
+          <div className="lg:col-span-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {Object.entries(footerLinks).map(([category, links], index) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-white font-semibold mb-4 capitalize">{category}</h3>
+                <ul className="space-y-2">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <a href={link.href} className="text-white/60 hover:text-white transition-colors duration-300">
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom Section */}
