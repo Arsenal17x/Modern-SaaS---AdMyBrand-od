@@ -1,40 +1,51 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { SectionContainer } from "@/components/section-container"
+import { motion, AnimatePresence } from "framer-motion"
+import { SectionContainer } from "./section-container"
+import { GlassCard } from "./glass-card"
+import { ChevronDown, HelpCircle } from "lucide-react"
 
 const faqs = [
   {
-    question: "How does ADmyBRAND AI Suite work?",
+    question: "How does ADmyBRAND's AI technology work?",
     answer:
-      "ADmyBRAND AI Suite uses advanced machine learning algorithms to analyze your brand, target audience, and campaign goals. It then generates personalized content, designs, and campaign strategies that align with your objectives. The AI continuously learns from your campaign performance to improve future recommendations.",
+      "Our AI uses advanced machine learning algorithms trained on millions of successful marketing campaigns. It analyzes your brand, audience, and goals to generate personalized content, optimize targeting, and continuously improve performance based on real-time data.",
   },
   {
     question: "Can I integrate ADmyBRAND with my existing marketing tools?",
     answer:
-      "Yes! ADmyBRAND integrates seamlessly with over 50+ popular marketing tools including Google Ads, Facebook Ads Manager, HubSpot, Mailchimp, Salesforce, and many more. Our API also allows for custom integrations with your existing tech stack.",
+      "ADmyBRAND integrates seamlessly with over 100+ popular marketing tools including Google Ads, Facebook Ads, HubSpot, Salesforce, Mailchimp, and many more. Our API also allows for custom integrations.",
   },
   {
-    question: "Is there a free trial available?",
+    question: "What kind of results can I expect?",
     answer:
-      "We offer a 14-day free trial for all our plans. No credit card required to get started. You'll have full access to all features during your trial period, and you can cancel anytime without any charges.",
+      "Our clients typically see a 200-400% increase in conversion rates, 50-80% reduction in cost per acquisition, and 10x faster campaign creation. Results vary based on industry and current marketing maturity, but improvements are usually visible within the first month.",
   },
   {
-    question: "How secure is my data with ADmyBRAND?",
+    question: "Is my data secure with ADmyBRAND?",
     answer:
-      "Security is our top priority. We're SOC 2 Type II compliant and use enterprise-grade encryption for all data transmission and storage. Your data is never shared with third parties, and we follow strict privacy protocols to ensure your information remains confidential.",
+      "Security is our top priority. We're SOC 2 Type II certified, GDPR compliant, and use enterprise-grade encryption. Your data is never shared with third parties and is stored in secure, geographically distributed data centers.",
   },
   {
-    question: "What kind of support do you provide?",
+    question: "Do I need technical expertise to use ADmyBRAND?",
     answer:
-      "We provide comprehensive support including 24/7 chat support, email support, extensive documentation, video tutorials, and webinar training sessions. Enterprise customers also get dedicated account managers and priority support.",
+      "Not at all! ADmyBRAND is designed for marketers, not developers. Our intuitive interface makes it easy for anyone to create, launch, and optimize campaigns. We also provide comprehensive onboarding and 24/7 support.",
   },
   {
-    question: "Can I customize the AI-generated content?",
+    question: "What's included in the free trial?",
     answer:
-      "Yes! All AI-generated content is fully customizable. You can edit, refine, and adjust any content to match your brand voice and specific requirements. The AI learns from your edits to provide better suggestions in the future.",
+      "The 14-day free trial includes full access to all Professional plan features: unlimited campaigns, advanced AI tools, analytics, A/B testing, and priority support. No credit card required to start.",
+  },
+  {
+    question: "Can I cancel my subscription anytime?",
+    answer:
+      "Yes, you can cancel your subscription at any time with no penalties or hidden fees. If you cancel, you'll continue to have access to your account until the end of your current billing period.",
+  },
+  {
+    question: "How does pricing work for team members?",
+    answer:
+      "Team member limits are based on your plan: Starter (1 member), Professional (up to 10 members), Enterprise (unlimited). Additional team members on Professional plans are $15/month each.",
   },
 ]
 
@@ -43,70 +54,100 @@ export function FAQSection() {
 
   return (
     <SectionContainer id="faq" className="py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"
+          >
+            <HelpCircle className="w-8 h-8 text-white" />
+          </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Frequently Asked
+            Frequently Asked{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {" Questions"}
+              Questions
             </span>
           </h2>
-          <p className="text-xl text-white/80">Everything you need to know about ADmyBRAND AI Suite</p>
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            Everything you need to know about ADmyBRAND. Can't find what you're looking for? Contact our support team.
+          </p>
         </motion.div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300"
             >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full p-8 text-left flex items-center justify-between group py-6 px-6"
-              >
-                <div className="flex items-center space-x-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">{String(index + 1).padStart(2, "0")}</span>
+              <GlassCard className="overflow-hidden">
+                <motion.button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+                  whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors duration-200">
-                    {faq.question}
-                  </h3>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ml-4 bg-transparent">
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-300 text-white ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </div>
-              </button>
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0"
+                  >
+                    <ChevronDown className="w-5 h-5 text-white/60" />
+                  </motion.div>
+                </motion.button>
 
-              <motion.div
-                initial={false}
-                animate={{
-                  height: openIndex === index ? "auto" : 0,
-                  opacity: openIndex === index ? 1 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="px-8 pb-8 pl-26">
-                  <p className="text-white/80 leading-relaxed text-lg">{faq.answer}</p>
-                </div>
-              </motion.div>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pl-18">
+                        <p className="text-white/80 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </GlassCard>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <p className="text-white/60 mb-4">Still have questions?</p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Contact Support
+          </motion.button>
+        </motion.div>
       </div>
     </SectionContainer>
   )

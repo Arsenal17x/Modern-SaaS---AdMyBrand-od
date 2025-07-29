@@ -1,5 +1,5 @@
-import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
+import type { ReactNode } from "react"
 
 interface GlassCardProps {
   children: ReactNode
@@ -8,7 +8,7 @@ interface GlassCardProps {
 
 export function GlassCard({ children, className }: GlassCardProps) {
   return (
-    <div className={cn("bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-md border border-white/20 rounded-xl shadow-xl", className)}>
+    <div className={cn("bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl", className)}>
       {children}
     </div>
   )

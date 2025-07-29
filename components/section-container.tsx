@@ -1,5 +1,5 @@
-import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
+import type { ReactNode } from "react"
 
 interface SectionContainerProps {
   children: ReactNode
@@ -9,9 +9,7 @@ interface SectionContainerProps {
 
 export function SectionContainer({ children, className, id }: SectionContainerProps) {
   return (
-    <section id={id} className={cn("relative", className)}>
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent pointer-events-none" />
+    <section id={id} className={cn("relative px-4 sm:px-6 lg:px-8", className)}>
       {children}
     </section>
   )

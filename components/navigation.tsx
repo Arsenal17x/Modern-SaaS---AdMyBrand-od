@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react"
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeItem, setActiveItem] = useState("")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +18,7 @@ export function Navigation() {
   }, [])
 
   const navItems = [
+    { name: "About", href: "#about" },
     { name: "Features", href: "#features" },
     { name: "Pricing", href: "#pricing" },
     { name: "Testimonials", href: "#testimonials" },
@@ -67,38 +67,13 @@ export function Navigation() {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
-              <motion.div
-                    className="absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 shadow-lg shadow-purple-400/50"
-                    initial={{ width: 0, x: "-50%" }}
-                    animate={{ width: 0, x: "-50%" }}
-                    whileHover={{
-                      width: "100%",
-                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(236, 72, 153, 0.6)",
-                    }}
-                    transition={{
-                      duration: 0.3,
-                      ease: "easeInOut",
-                    }}
-                  />
                 <a
                   href={item.href}
-                  className="text-white/80 hover:text-white transition-all duration-300 py-2 px-3 rounded-lg relative z-10 block"
+                  className="text-white text-lg font-medium no-underline relative block py-2 px-3 transition-colors duration-300 hover:text-white"
                 >
                   {item.name}
-                  {/* Glowing underline effect */}
-                  <motion.div
-                    className="absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 shadow-lg shadow-purple-400/50"
-                    initial={{ width: 0, x: "-50%" }}
-                    animate={{ width: 0, x: "-50%" }}
-                    whileHover={{
-                      width: "100%",
-                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(236, 72, 153, 0.6)",
-                    }}
-                    transition={{
-                      duration: 0.3,
-                      ease: "easeInOut",
-                    }}
-                  />
+                  {/* CSS-style underline effect using Tailwind */}
+                  <span className="absolute left-0 bottom-[-6px] h-[3px] w-0 bg-cyan-400 transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </motion.div>
             ))}
