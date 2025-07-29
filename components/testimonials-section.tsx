@@ -62,7 +62,7 @@ const testimonials = [
   },
 ]
 
-export function TestimonialsSection() {
+export default function TestimonialsSection() {
   return (
     <SectionContainer id="testimonials" className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto">

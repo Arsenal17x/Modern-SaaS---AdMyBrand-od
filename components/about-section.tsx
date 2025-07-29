@@ -3,36 +3,30 @@
 import { motion } from "framer-motion"
 import { SectionContainer } from "./section-container"
 import { GlassCard } from "./glass-card"
-import { Brain, Target, Rocket, Users, Lightbulb, TrendingUp, Award, Globe, Zap, Heart } from "lucide-react"
+import { Users, Target, Zap, Award, TrendingUp, Globe } from "lucide-react"
 
 const stats = [
-  { number: "10K+", label: "Happy Clients", icon: Users },
-  { number: "50M+", label: "AI Campaigns", icon: Rocket },
-  { number: "99.9%", label: "Uptime", icon: TrendingUp },
-  { number: "24/7", label: "Support", icon: Heart },
+  { number: "10,000+", label: "Active Users", icon: Users },
+  { number: "500M+", label: "Content Generated", icon: Zap },
+  { number: "98%", label: "Customer Satisfaction", icon: Award },
+  { number: "150+", label: "Countries Served", icon: Globe },
 ]
 
 const values = [
   {
-    icon: Brain,
-    title: "AI-Powered Innovation",
-    description:
-      "We harness cutting-edge artificial intelligence to revolutionize how brands connect with their audiences.",
-  },
-  {
     icon: Target,
-    title: "Precision Marketing",
-    description: "Our algorithms analyze millions of data points to deliver hyper-targeted campaigns that convert.",
+    title: "Mission-Driven",
+    description: "We're committed to democratizing AI-powered marketing tools for businesses of all sizes.",
   },
   {
-    icon: Lightbulb,
-    title: "Creative Excellence",
-    description: "We blend AI efficiency with human creativity to produce campaigns that inspire and engage.",
+    icon: TrendingUp,
+    title: "Innovation First",
+    description: "Constantly pushing the boundaries of what's possible with AI and machine learning.",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
-    description: "From startups to enterprises, we help brands scale their marketing efforts across all channels.",
+    icon: Users,
+    title: "Customer-Centric",
+    description: "Every feature we build is designed with our users' success and growth in mind.",
   },
 ]
 
@@ -40,28 +34,28 @@ const team = [
   {
     name: "Sarah Chen",
     role: "CEO & Co-Founder",
-    description: "Former Google AI researcher with 10+ years in machine learning and marketing automation.",
     image: "/placeholder-user.jpg",
+    bio: "Former VP of Marketing at TechCorp with 15+ years in AI and marketing automation.",
   },
   {
     name: "Marcus Rodriguez",
     role: "CTO & Co-Founder",
-    description: "Ex-Tesla engineer specializing in scalable AI systems and real-time data processing.",
     image: "/placeholder-user.jpg",
+    bio: "Ex-Google AI researcher specializing in natural language processing and machine learning.",
   },
   {
     name: "Emily Watson",
-    role: "Head of Marketing",
-    description: "Award-winning marketer who's helped 500+ brands achieve 10x growth through AI-driven strategies.",
+    role: "Head of Product",
     image: "/placeholder-user.jpg",
+    bio: "Product leader with expertise in user experience and AI-driven marketing solutions.",
   },
 ]
 
-export function AboutSection() {
+export default function AboutSection() {
   return (
     <SectionContainer id="about" className="py-24">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,24 +63,14 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"
-          >
-            <Zap className="w-8 h-8 text-white" />
-          </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               ADmyBRAND
             </span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            We're revolutionizing digital marketing with AI-powered solutions that help brands create meaningful
-            connections with their audiences at scale.
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            We're on a mission to empower every business with AI-driven marketing tools that deliver real results.
           </p>
         </motion.div>
 
@@ -100,10 +84,11 @@ export function AboutSection() {
         >
           <GlassCard className="p-8 md:p-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Mission</h3>
-            <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">
-              To democratize advanced marketing technology by making AI-powered brand building accessible to businesses
-              of all sizes. We believe every brand deserves the tools to tell their story effectively and reach their
-              ideal customers with precision.
+            <p className="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
+              At ADmyBRAND, we believe that every business deserves access to powerful AI marketing tools. We're
+              democratizing advanced marketing automation, making it accessible, affordable, and effective for companies
+              of all sizes. Our platform combines cutting-edge AI technology with intuitive design to help you create,
+              optimize, and scale your marketing efforts like never before.
             </p>
           </GlassCard>
         </motion.div>
@@ -121,20 +106,20 @@ export function AboutSection() {
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <GlassCard className="p-6 text-center group hover:bg-white/10 transition-all duration-300">
-                <stat.icon className="w-8 h-8 text-purple-400 mx-auto mb-3 group-hover:text-pink-400 transition-colors duration-300" />
+              <GlassCard className="p-6 text-center">
+                <stat.icon className="w-8 h-8 text-purple-400 mx-auto mb-4" />
                 <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
+                <div className="text-white/70">{stat.label}</div>
               </GlassCard>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* What We Do */}
+        {/* Values */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,31 +127,21 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">What We Do</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-3xl font-bold text-white text-center mb-12">Our Values</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <GlassCard className="p-8 h-full group hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/50 transition-all duration-300">
-                        <value.icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">
-                        {value.title}
-                      </h4>
-                      <p className="text-white/80 leading-relaxed">{value.description}</p>
-                    </div>
-                  </div>
+                <GlassCard className="p-6 h-full">
+                  <value.icon className="w-12 h-12 text-purple-400 mb-4" />
+                  <h4 className="text-xl font-semibold text-white mb-3">{value.title}</h4>
+                  <p className="text-white/70">{value.description}</p>
                 </GlassCard>
               </motion.div>
             ))}
@@ -179,9 +154,10 @@ export function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
+          className="mb-20"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Meet Our Team</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h3 className="text-3xl font-bold text-white text-center mb-12">Meet Our Team</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -191,48 +167,49 @@ export function AboutSection() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <GlassCard className="p-8 text-center group hover:bg-white/10 transition-all duration-300">
-                  <div className="relative mb-6">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-purple-500/30 group-hover:border-pink-500/50 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 w-24 h-24 rounded-full mx-auto bg-gradient-to-r from-purple-500/20 to-pink-500/20 group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-300"></div>
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
-                    {member.name}
-                  </h4>
-                  <p className="text-purple-400 font-medium mb-4">{member.role}</p>
-                  <p className="text-white/80 text-sm leading-relaxed">{member.description}</p>
+                <GlassCard className="p-6 text-center">
+                  <img
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  />
+                  <h4 className="text-xl font-semibold text-white mb-1">{member.name}</h4>
+                  <p className="text-purple-300 mb-3">{member.role}</p>
+                  <p className="text-white/70 text-sm">{member.bio}</p>
                 </GlassCard>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Call to Action */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-20"
         >
-          <GlassCard className="p-8 md:p-12">
-            <Award className="w-16 h-16 text-purple-400 mx-auto mb-6" />
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Transform Your Brand?</h3>
+          <GlassCard className="p-8 md:p-12 text-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Transform Your Marketing?</h3>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of successful brands who trust ADmyBRAND to power their marketing success with cutting-edge
-              AI technology.
+              Join thousands of businesses already using ADmyBRAND to revolutionize their marketing strategies with AI.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Start Your Journey Today
-            </motion.button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300"
+              >
+                Start Free Trial
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
+              >
+                Schedule Demo
+              </motion.button>
+            </div>
           </GlassCard>
         </motion.div>
       </div>

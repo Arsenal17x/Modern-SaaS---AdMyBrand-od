@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
-export function Navigation() {
+export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -18,11 +18,11 @@ export function Navigation() {
   }, [])
 
   const navItems = [
+    { name: "Home", href: "#home" }
     { name: "About", href: "#about" },
     { name: "Features", href: "#features" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Contact", href: "#contact" },
   ]
 
   return (
@@ -84,6 +84,7 @@ export function Navigation() {
                 <Button
                   variant="ghost"
                   className="text-white hover:text-white hover:bg-white/10 border-0 transition-all duration-300"
+                  onClick={() => (window.location.href = "/signin")}
                 >
                   Sign In
                 </Button>
@@ -92,7 +93,10 @@ export function Navigation() {
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(168, 85, 247, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 transition-all duration-300">
+                <Button
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 transition-all duration-300"
+                  onClick={() => (window.location.href = "/signup")}
+                >
                   Sign Up
                 </Button>
               </motion.div>
@@ -170,6 +174,7 @@ export function Navigation() {
                     <Button
                       variant="ghost"
                       className="w-full text-white hover:text-white hover:bg-white/10 border-0 justify-start"
+                      onClick={() => (window.location.href = "/signin")}
                     >
                       Sign In
                     </Button>
@@ -179,7 +184,10 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0">
+                    <Button
+                      className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
+                      onClick={() => (window.location.href = "/signup")}
+                    >
                       Sign Up
                     </Button>
                   </motion.div>

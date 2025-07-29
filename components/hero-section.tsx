@@ -2,101 +2,103 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, Zap, Target } from "lucide-react"
-import { SectionContainer } from "./section-container"
+import { ArrowRight, Play, Sparkles, Zap, TrendingUp } from "lucide-react"
 
-export function HeroSection() {
+export default function HeroSection() {
   return (
-    <SectionContainer className="pt-32 pb-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
+    <section id = "home" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
+        >
+          <Sparkles className="w-4 h-4 text-purple-400" />
+          <span className="text-sm text-white/90 font-medium">AI-Powered Marketing Platform</span>
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+        </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-white/90 font-medium">AI-Powered Marketing Suite</span>
-          </motion.div>
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+        >
+          Transform Your Marketing with{" "}
+          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+            AI Magic
+          </span>
+        </motion.h1>
 
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-          >
-            Transform Your{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Brand
-            </span>
-            <br />
-            with AI Magic
-          </motion.h1>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
+        >
+          Supercharge your marketing campaigns with AI-powered content generation, intelligent automation, and
+          data-driven insights that deliver real results.
+        </motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
-            Supercharge your marketing with our AI-powered suite. Create stunning campaigns, analyze performance, and
-            grow your brand faster than ever before.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 px-8 py-4 text-lg font-medium"
             >
               Start Free Trial
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
-              variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-4 rounded-xl transition-all duration-300 bg-transparent"
+              variant="outline"
+              className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-medium bg-transparent"
             >
+              <Play className="mr-2 w-5 h-5" />
               Watch Demo
             </Button>
           </motion.div>
+        </motion.div>
 
-          {/* Feature Icons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-8 text-white/60"
-          >
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-purple-400" />
-              <span className="text-sm font-medium">Lightning Fast</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Target className="w-5 h-5 text-pink-400" />
-              <span className="text-sm font-medium">Precision Targeting</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-purple-400" />
-              <span className="text-sm font-medium">AI-Powered</span>
-            </div>
-          </motion.div>
-        </div>
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+        >
+          {[
+            { icon: Zap, stat: "10x", label: "Faster Content Creation" },
+            { icon: TrendingUp, stat: "300%", label: "Average ROI Increase" },
+            { icon: Sparkles, stat: "50K+", label: "Happy Customers" },
+          ].map((item, index) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+            >
+              <item.icon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold text-white mb-2">{item.stat}</div>
+              <div className="text-white/70">{item.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </SectionContainer>
+    </section>
   )
 }
