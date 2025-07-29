@@ -54,19 +54,11 @@ A stunning, modern landing page for ADmyBRAND AI Suite - an AI-powered marketing
 2. **Install dependencies**
    ```
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
    ```
 
 3. **Run the development server**
    ```
    npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
    ```
 
 4. **Open your browser**
