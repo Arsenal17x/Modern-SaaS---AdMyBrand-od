@@ -179,6 +179,17 @@ export default function PricingSection() {
                       : "bg-white/10 hover:bg-white/20 border border-white/30 text-white"
                   } py-3 font-medium`}
                   size="lg"
+                  onClick={() => {
+                    if (tier.buttonText === "Contact Sales") {
+                      const target = document.querySelector('#contact')
+                      if (target) {
+                        target.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start'
+                        })
+                      }
+                    }
+                  }}
                 >
                   {tier.buttonText}
                 </Button>

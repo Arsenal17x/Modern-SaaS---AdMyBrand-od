@@ -93,7 +93,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Let's start a conversation</h3>
@@ -103,7 +103,8 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <div className="space-y-6">
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 gap-4">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
@@ -111,16 +112,17 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <GlassCard className="p-6 hover:bg-white/10 transition-all duration-300">
+                  <GlassCard className="p-4 hover:bg-white/10 transition-all duration-300 cursor-pointer">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <info.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-white mb-1">{info.title}</h4>
-                        <p className="text-purple-300 font-medium mb-1">{info.details}</p>
-                        <p className="text-white/60 text-sm">{info.description}</p>
+                        <h4 className="text-base font-semibold text-white mb-1">{info.title}</h4>
+                        <p className="text-purple-300 font-medium text-sm mb-1">{info.details}</p>
+                        <p className="text-white/60 text-xs">{info.description}</p>
                       </div>
                     </div>
                   </GlassCard>
@@ -128,21 +130,24 @@ export default function ContactSection() {
               ))}
             </div>
 
-            {/* CTA */}
+            {/* Additional Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
+              className="mt-8"
             >
-              <GlassCard className="p-6 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
-                <h4 className="text-lg font-semibold text-white mb-2">Ready to get started?</h4>
+              <GlassCard className="p-4 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
+                <h4 className="text-base font-semibold text-white mb-2">Ready to get started?</h4>
                 <p className="text-white/70 mb-4">
                   Book a demo and see how ADmyBRAND can transform your marketing strategy.
                 </p>
-                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 w-full sm:w-auto">
                   Schedule a Demo
-                </Button>
+                  </Button>
+                </motion.div>
               </GlassCard>
             </motion.div>
           </motion.div>

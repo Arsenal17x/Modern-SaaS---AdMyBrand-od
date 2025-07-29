@@ -55,6 +55,15 @@ export default function HeroSection() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 px-8 py-4 text-lg font-medium"
+              onClick={() => {
+                const target = document.querySelector('#about')
+                if (target) {
+                  target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  })
+                }
+              }}
             >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -66,6 +75,15 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-medium bg-transparent"
+              onClick={() => {
+                const target = document.querySelector('#contact')
+                if (target) {
+                  target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  })
+                }
+              }}
             >
               <Play className="mr-2 w-5 h-5" />
               Watch Demo

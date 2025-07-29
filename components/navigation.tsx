@@ -70,6 +70,16 @@ export default function Navigation() {
                 <a
                   href={item.href}
                   className="text-white text-lg font-medium no-underline relative block py-2 px-3 transition-colors duration-300 hover:text-white"
+                 onClick={(e) => {
+                   e.preventDefault()
+                   const target = document.querySelector(item.href)
+                   if (target) {
+                     target.scrollIntoView({
+                       behavior: 'smooth',
+                       block: 'start'
+                     })
+                   }
+                 }}
                 >
                   {item.name}
                   {/* CSS-style underline effect using Tailwind */}
@@ -160,6 +170,19 @@ export default function Navigation() {
                     transition={{ delay: index * 0.1 }}
                     className="block py-3 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300"
                     onClick={() => setIsMobileMenuOpen(false)}
+                   onClick={(e) => {
+                     e.preventDefault()
+                     setIsMobileMenuOpen(false)
+                     const target = document.querySelector(item.href)
+                     if (target) {
+                       setTimeout(() => {
+                         target.scrollIntoView({
+                           behavior: 'smooth',
+                           block: 'start'
+                         })
+                       }, 300)
+                     }
+                   }}
                     whileHover={{ x: 10 }}
                   >
                     {item.name}
