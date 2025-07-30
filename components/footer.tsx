@@ -80,28 +80,39 @@ export default function Footer() {
           </div>
 
           {/* Wrapper for link sections */}
-          <div className="lg:col-span-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {Object.entries(footerLinks).map(([category, links], index) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-white font-semibold mb-4 capitalize">{category}</h3>
-                <ul className="space-y-2">
-                  {links.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="text-white/60 hover:text-white transition-colors duration-300">
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+<div className="lg:col-span-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  {Object.entries(footerLinks).map(([category, links], index) => (
+    <motion.div
+      key={category}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <h3 className="text-white font-semibold mb-4 capitalize">{category}</h3>
+      <ul className="space-y-2">
+        {links.map((link, linkIndex) => (
+          <li key={link.name}>
+            <motion.a
+              href={link.href}
+              className="block text-white/60 hover:text-white transition-colors duration-300"
+              whileHover={{ x: 8 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: linkIndex * 0.03, // slight stagger for wave feel
+              }}
+            >
+              {link.name}
+            </motion.a>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  ))}
+</div>
+
         </div>
 
         {/* Bottom Section */}

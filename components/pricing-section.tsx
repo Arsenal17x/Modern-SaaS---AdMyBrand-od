@@ -83,10 +83,10 @@ export default function PricingSection() {
           </h2>
           
           {/* Logos */}
-          <div className="flex justify-center items-center space-x-8 mb-12 opacity-60">
-            <div className="text-white/60 text-sm font-medium">Trusted by the best marketing teams</div>
+          <div className="flex justify-center items-center space-x-8 mb-12 opacity-80">
+            <div className="text-white/80 text-sm font-medium">Trusted by the best marketing teams</div>
           </div>
-          <div className="flex justify-center items-center space-x-12 mb-16 opacity-40">
+          <div className="flex justify-center items-center space-x-12 mb-16 opacity-80">
             <div className="text-white/60 font-bold text-lg">SANITY</div>
             <div className="text-white/60 font-bold text-lg">Raycast</div>
             <div className="text-white/60 font-bold text-lg">Sketch</div>

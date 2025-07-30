@@ -197,19 +197,21 @@ export default function Navigation() {
                   </motion.a>
                 ))}
                 <div className="border-t border-white/20 pt-4 space-y-3">
-                  <motion.div
+                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
+                    className="flex justify-center" // Ensures horizontal centering
                   >
                     <Button
                       variant="ghost"
-                      className="w-full text-white hover:text-white hover:bg-white/10 border-0 justify-start"
+                      className="w-full text-white border border-white/30 hover:text-white hover:bg-white/10 rounded-lg px-6 py-2"
                       onClick={() => (window.location.href = "/signin")}
                     >
                       Sign In
                     </Button>
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
