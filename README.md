@@ -105,7 +105,6 @@ admybrand-landing/
 ├── lib/                       # Utility functions (e.g. formatters, constants)
 ├── public/                    # Static files like images, favicon, etc.
 ├── styles/                    # Additional custom CSS or Tailwind config
-└── node_modules/              # Project dependencies
 ```
 ## 🎨 Design System
 
