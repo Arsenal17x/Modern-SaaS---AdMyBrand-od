@@ -10,7 +10,7 @@ A stunning, modern landing page for ADmyBRAND AI Suite - an AI-powered marketing
 
 ### Modern Design & UI
 - **Glassmorphism Effects**: Beautiful glass-like components with backdrop blur
-- **Gradient Backgrounds**: Purple-to-pink gradients throughout the design
+- **Gradient Backgrounds**: black via-blue to-black gradients throughout the design
 - **Responsive Design**: Mobile-first approach with seamless desktop experience
 - **Dark Theme**: Professional dark theme with accent colors
 
@@ -20,6 +20,7 @@ A stunning, modern landing page for ADmyBRAND AI Suite - an AI-powered marketing
 - **Dynamic Testimonials**: Two-row infinite carousel with opposite directions
 - **Collapsible FAQ**: Clean accordion with numbered items and arrow indicators
 - **Pricing Toggle**: Monthly/yearly billing switch with savings indicator
+- **Back-to-top**: Back-to-top Button
 
 ### Landing Page Sections
 1. **Hero Section**: Compelling headline, subtext, CTAs, and hero imagery
@@ -72,35 +73,45 @@ npm start
 ```
 
 ## 📁 Project Structure
-
 ```
 admybrand-landing/
 ├── app/
-│   ├── globals.css          # Global styles and Tailwind imports
-│   ├── layout.tsx           # Root layout with theme provider
-│   └── page.tsx             # Main landing page
+│   ├── signin/
+│   │   └── page.tsx             # Sign-in page route
+│   ├── signup/
+│   │   └── page.tsx             # Sign-up page route
+│   ├── globals.css              # Global styles and Tailwind CSS imports
+│   └── layout.tsx               # Root layout including fonts and theme provider
+│
 ├── components/
-│   ├── ui/                  # shadcn/ui components
-│   ├── faq-section.tsx      # FAQ accordion component
-│   ├── features-section.tsx # Features showcase
-│   ├── footer.tsx           # Footer with links and newsletter
-│   ├── glass-card.tsx       # Reusable glassmorphism card
-│   ├── hero-section.tsx     # Hero with CTA and imagery
-│   ├── navigation.tsx       # Header navigation with auth buttons
-│   ├── pricing-section.tsx  # Pricing tiers with toggle
-│   ├── section-container.tsx # Consistent section wrapper
-│   └── testimonials-section.tsx # Customer testimonials carousel
-├── hooks/                   # Custom React hooks
-├── lib/                     # Utility functions
-└── public/                  # Static assets
+│   └── ui/                      # All UI components (modular and reusable)
+│       ├── about-section.tsx           # About section describing the product
+│       ├── back-to-top.tsx             # Scroll-to-top floating button
+│       ├── contact-section.tsx         # Contact form with glass effect
+│       ├── faq-section.tsx             # FAQ accordion component
+│       ├── features-section.tsx        # Feature highlight grid
+│       ├── footer.tsx                  # Footer with links and subscription
+│       ├── glass-card.tsx              # Reusable glassmorphic styled card
+│       ├── hero-section.tsx            # Hero section with CTA
+│       ├── lazy-section.tsx            # Lazy-loaded section example
+│       ├── navigation.tsx              # Top navigation bar with logo/auth
+│       ├── optimized-image.tsx         # Wrapper around Next/Image
+│       ├── pricing-section.tsx         # Pricing plans with toggle support
+│       ├── section-container.tsx       # Wrapper to maintain layout consistency
+│       ├── testimonials-section.tsx    # Client feedback carousel
+│       └── theme-provider.tsx          # Theme context provider (e.g. dark/light)
+│
+├── hooks/                     # Custom React hooks
+├── lib/                       # Utility functions (e.g. formatters, constants)
+├── public/                    # Static files like images, favicon, etc.
+├── styles/                    # Additional custom CSS or Tailwind config
+└── node_modules/              # Project dependencies
 ```
-
 ## 🎨 Design System
 
 ### Colors
-- **Primary**: Purple to Pink gradients (\`from-purple-600 to-pink-600\`)
+- **Primary**: Black to Blue gradients (\`from-black via-blue-900 to-black\`)
 - **Secondary**: Indigo and Purple variations
-- **Accent**: Green for highlights (\`bg-green-500\`)
 - **Background**: Dark theme with glass overlays
 
 ### Typography
@@ -171,14 +182,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **shadcn/ui** - Beautiful and accessible UI components
 - **Framer Motion** - Animation library for React
 - **Lucide React** - Beautiful icon library
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in this repository
-- Contact: support@admybrand.ai
-- Documentation: [docs.admybrand.ai](https://docs.admybrand.ai)
-
----
 
 Built with ❤️ for marketers and startups worldwide.
