@@ -6,7 +6,11 @@ import { ArrowRight, Play, Sparkles, Zap, TrendingUp } from "lucide-react"
 
 export default function HeroSection() {
   return (
-    <section id = "home" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+    <section 
+      id="home" 
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8"
+      aria-label="Hero section"
+    >
       <div className="max-w-7xl mx-auto text-center">
         {/* Badge */}
         <motion.div
@@ -14,6 +18,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
+          role="banner"
+          aria-label="AI-Powered Marketing Platform badge"
         >
           <Sparkles className="w-4 h-4 text-purple-400" />
           <span className="text-sm text-white/90 font-medium">AI-Powered Marketing Platform</span>
@@ -50,11 +56,14 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          role="group"
+          aria-label="Call to action buttons"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 px-8 py-4 text-lg font-medium"
+              aria-label="Start free trial of ADmyBRAND AI Suite"
               onClick={() => {
                 const target = document.querySelector('#about')
                 if (target) {
@@ -75,6 +84,7 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-medium bg-transparent"
+              aria-label="Watch product demo video"
               onClick={() => {
                 const target = document.querySelector('#contact')
                 if (target) {
@@ -97,6 +107,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          role="region"
+          aria-label="Key statistics"
         >
           {[
             { icon: Zap, stat: "10x", label: "Faster Content Creation" },
@@ -109,10 +121,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+              role="article"
+              aria-label={`${item.stat} ${item.label}`}
             >
               <item.icon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-              <div className="text-3xl font-bold text-white mb-2">{item.stat}</div>
-              <div className="text-white/70">{item.label}</div>
+              <div className="text-3xl font-bold text-white mb-2" aria-label={`${item.stat} statistic`}>{item.stat}</div>
+              <div className="text-white/70" aria-label={item.label}>{item.label}</div>
             </motion.div>
           ))}
         </motion.div>
